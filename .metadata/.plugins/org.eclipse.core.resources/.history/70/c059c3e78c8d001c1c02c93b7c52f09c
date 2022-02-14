@@ -1,0 +1,59 @@
+package com.one_to_many;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Person_One_to_Many {
+	@Id
+	private int personId;
+	private String name;
+
+	@OneToMany(cascade=CascadeType.ALL)
+    List<Address_One_to_Many> addresses;
+
+
+	public Person_One_to_Many() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Person_One_to_Many(int personId, String name, Address_One_to_Many address) {
+		super();
+		this.personId = personId;
+		this.name = name;
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Person_One_to_One [personId=" + personId + ", name=" + name + ", address=" + address + "]";
+	}
+
+	public int getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(int personId) {
+		this.personId = personId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Address_One_to_Many getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address_One_to_Many address) {
+		this.address = address;
+	}
+
+}

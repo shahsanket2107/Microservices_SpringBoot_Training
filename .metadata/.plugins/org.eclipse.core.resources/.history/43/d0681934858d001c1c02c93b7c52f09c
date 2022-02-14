@@ -1,0 +1,8 @@
+package com.one_to_one;
+
+public class Person_One_to_One {
+	private int personId;
+	private String name;
+	private Address_One_to_One address;
+	
+}

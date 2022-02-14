@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- class name   -> table name -->
+<!-- identity     -> PK -->
+<!-- Data Members -> columns -->
+
+<hibernate-mapping>
+	<!-- fully qualified class name -->
+	<class name="com.pojo.Employee" table="employee"> 
+		<id name="id" column="empid">
+			<!-- who will provide value for the p.k. 
+				 assign -> developer will assign value -->
+			<generator class="assigned"></generator>
+		</id>
+		
+		<property name="firstName" ></property>
+		<property name="lastName" ></property>
+		<property name="salary" ></property>
+	</class>
+</hibernate-mapping>

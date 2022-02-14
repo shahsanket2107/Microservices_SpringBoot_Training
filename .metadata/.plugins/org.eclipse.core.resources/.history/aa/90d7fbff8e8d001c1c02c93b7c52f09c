@@ -1,0 +1,34 @@
+package com.one_to_many;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class Test_One_To_Many {
+	public static void main(String[] args) {
+
+		Configuration configuration = new Configuration().configure();
+		try {
+			SessionFactory sessionFactory = configuration.configure().buildSessionFactory();
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+
+			List<Address_One_to_Many> addresses = new ArrayList<Address_One_To_Many>();
+			
+
+			session.close();
+			sessionFactory.close();
+		}
+		
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+
+	}
+}
