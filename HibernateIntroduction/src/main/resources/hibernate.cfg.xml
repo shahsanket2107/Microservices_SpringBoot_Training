@@ -17,7 +17,7 @@
 		<mapping class="com.one_to_one.Person_One_to_One" />
 		<mapping class="com.one_to_many.Address_One_to_Many" />
 		<mapping class="com.one_to_many.Person_One_to_Many" />
-		
+		<mapping class="com.hibernate_query_lang.Employee" />
 	</session-factory>
 	
 	

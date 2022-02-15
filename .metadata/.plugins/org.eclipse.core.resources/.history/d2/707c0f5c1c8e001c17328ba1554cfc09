@@ -1,0 +1,66 @@
+package com.hibernate_query_lang;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Query;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class EmployeeDAOImpl implements EmployeeDAO{
+	public Integer addEmployee(int id,String fname,String lname, int salary)
+	{
+		Integer employeeID = null;
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		Employee employee = new Employee(id,fname,lname,salary);
+		employeeID=(Integer)session.save(employee);
+		tx.commit();
+		return employeeID;
+	}
+
+	@Override
+	public List<Employee> listAllEmployees() {
+		// TODO Auto-generated method stub
+		List<Employee> employees= new ArrayList<Employee>();
+		String FIND_ALL = "from com.hibernate_query_lang.Employee";
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery(FIND_ALL);
+		employees=query.getResultList();
+		return employees;
+	}
+
+	@Override
+	public List<Object[]> listAllEmployeesByCol() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Object[]> listAllEmployeesByCol(int salary) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updateEmployee(int salary, int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Employee> query() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Object[]> mult_qury_with_param() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

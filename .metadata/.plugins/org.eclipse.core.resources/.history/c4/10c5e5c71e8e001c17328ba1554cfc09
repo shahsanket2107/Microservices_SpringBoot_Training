@@ -1,0 +1,13 @@
+package com.hibernate_query_lang;
+
+public class FindAll {
+	public static void main(String[] args) {
+		EmployeeDAO dao = new EmployeeDAOImpl();
+		dao.listAllEmployees().forEach(System.out::println);
+		System.out.println("Finding values by column.......");
+		dao.listAllEmployeesByCol().forEach((result)->{System.out.println(result[0]+"\t"+result[1]);});
+		System.out.println("Finding values by column using salary filter.......");
+		dao.listAllEmployeesByCol().forEach((result)->{System.out.println(result[0]+"\t"+result[1]);});
+	}
+	
+}
