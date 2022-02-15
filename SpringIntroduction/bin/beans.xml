@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- Product p = new Product() -->
+	<bean id ="p" class="com.pojo.Product">
+	<property name="name" value="oracle"></property>
+	<property name="productId" value="88"></property>
+	</bean>
+	
+	<bean id ="p1" class="com.pojo.Product" scope="prototype">
+	<property name="name" value="amazon"></property>
+	<property name="productId" value="383"></property>
+	</bean>
+	
+	<bean id ="product_const" class="com.pojo.Product" scope="prototype">
+	<constructor-arg value="Matthew" name="name"></constructor-arg>
+	<constructor-arg value="777"></constructor-arg>
+	</bean>
+	
+	<bean id="cust" class="com.pojo.Customer" autowire="byName">
+	<property name="customerName" value="Sanket"></property>
+	<property name="customerId" value="555"></property>
+	<!-- <property name="p" ref="product_const"></property> -->
+	</bean>
+	
+	<bean id="cust2" class="com.pojo.Customer">
+	<constructor-arg value="22"></constructor-arg>
+	<constructor-arg value="Jerry"></constructor-arg>
+	<constructor-arg ref="p"></constructor-arg>
+	</bean>
+
+</beans>
