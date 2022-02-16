@@ -48,6 +48,4 @@ public class Customer {
 	public String toString() {
 		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", p=" + p + "]";
 	}
-	
-	
 }

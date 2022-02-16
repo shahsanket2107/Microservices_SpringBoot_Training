@@ -1,4 +1,5 @@
 package com.hibernate_query_lang;
+
 import java.util.List;
 
 public interface EmployeeDAO {
