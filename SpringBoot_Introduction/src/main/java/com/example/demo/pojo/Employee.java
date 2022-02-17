@@ -1,9 +1,18 @@
 package com.example.demo.pojo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name="hql")
 public class Employee {
 	
-
+	@Id()
+	@Column(name="empid")
 	private int id;
-	private String firstName;
+	@Column(name="firstname")
+	private String firstName; //first_name
+	@Column(name="lastname")
 	private String lastName;
 	private int salary;
 	
